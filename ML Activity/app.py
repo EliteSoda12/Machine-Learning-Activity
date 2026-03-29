@@ -6,12 +6,12 @@ from PIL import Image
 # Load the model
 @st.cache_resource
 def load_model():
-    return tf.keras.models.load_model("ML Activity/converted_savedmodel")
+    return tf.keras.models.load_model("ML Activity/converted_savedmodel/model.savedmodel")
 
 model = load_model()
 
 # Load class labels and strip numeric prefixes
-with open("converted_keras/labels.txt", "r") as f:
+with open("ML Activity/converted_savedmodel/labels.txt", "r") as f:
     raw_labels = f.read().splitlines()
     class_names = [line.split(" ", 1)[1] if " " in line else line for line in raw_labels]
 
