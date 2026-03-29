@@ -6,7 +6,7 @@ from PIL import Image
 # Load the model
 @st.cache_resource
 def load_model():
-    return tf.keras.models.load_model("ML Activity/converted_keras/keras_model.h5")
+    return tf.keras.models.load_model("ML Activity/converted_savedmodel")
 
 model = load_model()
 
